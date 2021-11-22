@@ -1,3 +1,3 @@
 from setuptools import setup, find_packages
 
-setup(name = 'risteys-pipeline', version = '0.1')
+setup(name = 'risteys_pipeline', version = '0.1')
