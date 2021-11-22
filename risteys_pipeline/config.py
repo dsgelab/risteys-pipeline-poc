@@ -1,3 +1,4 @@
 from pathlib import Path
 
-data_path = Path("./data/lung.csv")
+finngen_data_path = Path("./data/lung.csv")
+finregistry_data_path = Path("./data/lung.csv")
