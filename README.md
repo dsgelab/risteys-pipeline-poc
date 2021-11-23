@@ -8,9 +8,9 @@ This repository is a proof-of-concept/demo of the refactored Risteys pipeline. T
 - the same analysis pipeline can be applied to both FinnGen and FinRegistry data
 - more tests can be easily implemented 
 
-The Risteys pipeline can be split into two pieces: the **data pipeline** and the **analysis pipeline**. The data pipeline is generally project-specific, and therefore the scripts associated with the data pipeline are stored in `risteys_pipeline` subdirectories `finngen` and `finregistry`. The data pipeline includes scripts such as `load_data.py` and `preprocess_data.py`. The analysis pipeline is the same for the two datasets and includes scripts such as `mortality_analysis.py` and `survival_analysis.py`. Project-specific analysis scripts can also be implemented and stored in the project subdirectories if needed.
+The Risteys pipeline can be split into two pipelines: the **data pipeline** and the **analysis pipeline**. The data pipeline is generally project-specific, and therefore the scripts associated with the data pipeline are stored in `risteys_pipeline` subdirectories `finngen` and `finregistry`. The data pipeline includes scripts for loading and preprocessing the datasets. The output data format of the two data pipelines should match. The analysis pipeline is the same for the two datasets and includes scripts such as `mortality_analysis.py` and `survival_analysis.py`. Project-specific analysis scripts can also be implemented and stored in the project subdirectories if needed.
 
-Possible challenges include harmonizing the output of the data pipeline for the two datasets and accounting for the different requirements of the computing environment for the two datasets.
+Possible challenges include harmonizing the output of the data pipeline for the two datasets and accounting for the different requirements of the computing environment.
 
 In this demo,  the lung.csv dataset from the `lifelines` Python package is used. The dataset can be downloaded here: https://github.com/CamDavidsonPilon/lifelines/blob/master/lifelines/datasets/lung.csv
 
@@ -39,7 +39,3 @@ Unit tests are implemented using `pytest`. The tests can be run from the project
 ```
 python -m pytest test
 ```
-
-
-
-
