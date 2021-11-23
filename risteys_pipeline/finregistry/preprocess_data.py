@@ -5,13 +5,13 @@ import numpy as np
 
 def preprocess_finregistry_data(df):
     """
-    Pre-process FinRegistry data. Add a new column 'dead' to the data.
+    Apply the following preprocessing steps to the FinRegistry data:
+    - Drop columns with missing values 
 
     Args:
         df (data frame): FinRegistry data frame from finregistry.load_data.py
     """
-    df["dead"] = np.nan
-    df.loc[df.status == 1, "dead"] = 0
-    df.loc[df.status == 2, "dead"] = 1
+    
+    df = df.dropna(subset=["inst", "time", "status", "age", "sex", "ph.ecog", "ph.karno", "pat.karno", "meal.cal", "wt.loss"]).reset_index(drop=True)
 
     return(df)
