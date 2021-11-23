@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Data folder
+# Data and notebook directories
 data/*
+notebooks/*
