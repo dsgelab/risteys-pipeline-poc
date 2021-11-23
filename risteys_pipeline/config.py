@@ -1,4 +1,6 @@
+import os
 from pathlib import Path
 
-finngen_data_path = Path("./data/lung.csv")
-finregistry_data_path = Path("./data/lung.csv")
+root_dir = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+finngen_data_path = os.path.join(root_dir, 'data', 'lung.csv')
+finregistry_data_path = os.path.join(root_dir, 'data', 'lung.csv')
