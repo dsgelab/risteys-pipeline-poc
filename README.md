@@ -10,7 +10,7 @@ This repository is a proof-of-concept/demo of the refactored Risteys pipeline. T
 
 The Risteys pipeline can be split into two pipelines: the **data pipeline** and the **analysis pipeline**. The data pipeline includes scripts for loading and preprocessing datasets. Project-specific scripts are usually required to load and preprocess the data, and therefore many of the scripts associated with the data pipeline are stored in `risteys_pipeline` subdirectories `finngen` and `finregistry`. The output data format of the two data pipelines should match. The analysis pipeline is the same for the two datasets and includes scripts such as `mortality_analysis.py` and `survival_analysis.py`. Project-specific analysis scripts can also be implemented and stored in the project subdirectories if needed.
 
-Tests are stored in the `test` directory. Tests are used to validate data, assert the correctness or the analysis, detect bugs, and get confidence on the outputs. In Risteys, test cases might include e.g. verifying that the requirement for the minimum number of individuals is met or checking that the two data pipelines produce data in the same format.
+Tests are stored in the `test` directory. Tests are used to validate data, assert the correctness of the analysis, detect bugs, and get confidence on the outputs. In Risteys, test cases might include e.g. verifying that the requirement for the minimum number of individuals is met or checking that the two data pipelines produce data in the same format.
 
 Possible challenges include harmonizing the output of the data pipeline for the two datasets and accounting for the different computing environment requirements.
 
