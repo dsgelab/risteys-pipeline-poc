@@ -2,6 +2,8 @@
 
 import pandas as pd
 from lifelines import CoxPHFitter
+from risteys_pipeline.log import logger
+
 
 def mortality_analysis(df):
     """
@@ -11,11 +13,16 @@ def mortality_analysis(df):
         df (data frame): Preprocessed data from finngen.preprocess_data.py or finregistry.preprocess_data.py
     """
 
-    df = df[["time", "age", "sex", "ph.ecog", "ph.karno", "pat.karno", "meal.cal", "wt.loss", "status"]]
+    logger.info("Mortality analysis started")
+
+    df = df[["time", "age", "sex", "ph.ecog", "ph.karno",
+             "pat.karno", "meal.cal", "wt.loss", "status"]]
 
     cph = CoxPHFitter()
     cph.fit(df, "time", event_col="status")
-    
+
     res = pd.concat([cph.params_, cph.confidence_intervals_], axis=1)
+
+    logger.info("Mortality analysis done")
 
     return(res)
